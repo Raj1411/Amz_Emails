@@ -14,13 +14,12 @@ def read_mails():
         host='imap.gmail.com'
         username='srajinder816@gmail.com'
         password=st.secrets['KEY']
-        st.write(password)
 
         mail=imaplib.IMAP4_SSL(host)
         mail.login(username,password)
         mail.select('INBOX')
 
-        _,search_data=mail.search(None,'(FROM "do-not-reply@amazon.in")','(FROM "seller-answers@amazon.in")',"UNSEEN")
+        _,search_data=mail.search(None,'(FROM "do-not-reply@amazon.in")','(FROM "do-not-reply@amazon.in")',"UNSEEN")
 
 
         for i in search_data[0].split():
