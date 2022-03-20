@@ -19,7 +19,7 @@ def read_mails():
         mail.login(username,password)
         mail.select('INBOX')
 
-        _,search_data=mail.search(None,'(FROM "supply@meesho.com")','(FROM "supply@meesho.com")',"UNSEEN")
+        _,search_data=mail.search(None,'(FROM "do-not-reply@amazon.in")','(FROM "supply@meesho.com")',"UNSEEN")
 
 
         for i in search_data[0].split():
