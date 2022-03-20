@@ -23,7 +23,6 @@ def read_mails():
 
 
         for i in search_data[0].split():
-            st.write(i)
             _,data=mail.fetch(i,'(RFC822)')
             email_body=data[0][1]
     #     # print(email_body)
