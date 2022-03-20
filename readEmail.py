@@ -12,7 +12,7 @@ btn=st.button('Read Meesho Mails')
 def read_mails():
     if btn:
         host='imap.gmail.com'
-        username='rajinder@swissbeauty.in'
+        username='srajinder816@gmail.com'
         password=st.secrets['KEY']
 
         mail=imaplib.IMAP4_SSL(host)
