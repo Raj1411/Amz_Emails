@@ -25,14 +25,51 @@ def read_mails():
         for i in search_data[0].split():
             _,data=mail.fetch(i,'(RFC822)')
             email_body=data[0][1]
-    #     # print(email_body)
             email_body=email.message_from_bytes(email_body)
-        # if email_body['From']=='supply@meesho.com':
-        #     print('From:',email_body['From'])
-        #     print('Subject:',email_body['Subject'])
-        #     print('Body:',email_body.get_payload())
-            # mail.store(i,'+FLAGS','\Seen')
+            
+            
+            
+def read_mails_1():
+    if btn:
+        host='imap.gmail.com'
+        username='srajinder816@gmail.com'
+        password=st.secrets['KEY']
 
+        mail=imaplib.IMAP4_SSL(host)
+        mail.login(username,password)
+        mail.select('INBOX')
+
+        _,search_data=mail.search(None,'(FROM "donotreply@amazon.com")','(FROM "donotreply@amazon.com")',"UNSEEN")
+
+
+        for i in search_data[0].split():
+            _,data=mail.fetch(i,'(RFC822)')
+            email_body=data[0][1]
+            email_body=email.message_from_bytes(email_body)
+            
+            
+            
+
+ 
+def read_mails_2():
+    if btn:
+        host='imap.gmail.com'
+        username='srajinder816@gmail.com'
+        password=st.secrets['KEY']
+
+        mail=imaplib.IMAP4_SSL(host)
+        mail.login(username,password)
+        mail.select('INBOX')
+
+        _,search_data=mail.search(None,'(FROM "order-update@amazon.com")','(FROM "order-update@amazon.com")',"UNSEEN")
+
+
+        for i in search_data[0].split():
+            _,data=mail.fetch(i,'(RFC822)')
+            email_body=data[0][1]
+            email_body=email.message_from_bytes(email_body)
 
 if __name__=='__main__':
     read_mails()
+    read_mails_1()
+    read_mails_2()
