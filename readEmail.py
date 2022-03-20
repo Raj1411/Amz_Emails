@@ -14,6 +14,7 @@ def read_mails():
         host='imap.gmail.com'
         username='srajinder816@gmail.com'
         password=st.secrets['KEY']
+        st.write(password)
 
         mail=imaplib.IMAP4_SSL(host)
         mail.login(username,password)
@@ -23,6 +24,7 @@ def read_mails():
 
 
         for i in search_data[0].split():
+            st.write(i)
             _,data=mail.fetch(i,'(RFC822)')
             email_body=data[0][1]
     #     # print(email_body)
