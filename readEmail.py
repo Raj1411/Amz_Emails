@@ -7,7 +7,7 @@ import schedule, time
 
 st.title("Email Reader")
 
-btn=st.button('Read Meesho Mails')
+btn=st.button('Read Amz Mails')
 
 def read_mails():
     if btn:
